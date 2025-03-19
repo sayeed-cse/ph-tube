@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,68 @@
     <!-- daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .active {
+            background-color: #b91c1c;
+            color: white;
+        }
+    </style>
+
 </head>
+
 <body>
-    
+    <header class="container mx-auto flex justify-between pb-8 pt-12 border-b-2 border-gray-300">
+        <div class="logo">
+            <img src="./assets/Logo.png" alt="">
+        </div>
+        <div class="sort">
+            <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                <input id="search-input" type="search" class="grow" placeholder="Search" />
+              </label>
+        </div>
+        <div class="blogs">
+            <button class="btn bg-red-700 text-white">Sort By view</button>
+        </div>
+    </header>
+    <nav id="category-container" class="flex justify-center gap-5 py-5">
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
+    </nav>
+
+    <section class="container mx-auto grid grid-cols-4 gap-6" id="video-container">
+        <div class="col-span-full flex flex-col justify-center items-center py-48">
+            <img src="./assets/Icon.png" alt="">
+            <h2 class="text-4xl font-bold">Oops!! Sorry, There is no content here</h2>
+        </div>
+        <!-- <div class="card bg-base-100">
+            <figure class="relative">
+                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
+                <span class="absolute bottom-4 right-4 text-white bg-black py-1 px-2 rounded-lg">3hrs 56 min ago</span>
+            </figure>
+            <div class="flex gap-4 py-5">
+                <div class="avatar w-10 h-10">
+                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"  class="rounded-full"/>
+                </div>
+                <div>
+                    <h2 class="card-title font-bold">Card Title</h2>
+                    <p class="flex gap-1 items-center">Awlad Hossain
+                        <img src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png" alt="" class="w-5">
+                    </p>
+                    <p>91k Views</p>
+                </div>
+                
+            </div>
+            <button class="btn mx-5">Show Details</button>
+        </div> -->
+    </section>
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video-details" class="modal">
+        <div class="modal-box max-w-3xl" id="details-container">
+        </div>
+    </dialog>
+
+    <script src="scripts/script.js"></script>
 </body>
+
 </html>

@@ -35,35 +35,18 @@
     <nav id="category-container" class="flex justify-center gap-5 py-5">
         <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
     </nav>
+    <section id="loader" class="text-center py-5 hidden">
+        <span class="loading loading-dots loading-xl w-16"></span>
+    </section>
 
     <section class="container mx-auto grid grid-cols-4 gap-6" id="video-container">
         <div class="col-span-full flex flex-col justify-center items-center py-48">
             <img src="./assets/Icon.png" alt="">
             <h2 class="text-4xl font-bold">Oops!! Sorry, There is no content here</h2>
         </div>
-        <!-- <div class="card bg-base-100">
-            <figure class="relative">
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-                <span class="absolute bottom-4 right-4 text-white bg-black py-1 px-2 rounded-lg">3hrs 56 min ago</span>
-            </figure>
-            <div class="flex gap-4 py-5">
-                <div class="avatar w-10 h-10">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"  class="rounded-full"/>
-                </div>
-                <div>
-                    <h2 class="card-title font-bold">Card Title</h2>
-                    <p class="flex gap-1 items-center">Awlad Hossain
-                        <img src="https://img.icons8.com/?size=48&id=98A4yZTt9abw&format=png" alt="" class="w-5">
-                    </p>
-                    <p>91k Views</p>
-                </div>
-                
-            </div>
-            <button class="btn mx-5">Show Details</button>
-        </div> -->
+        
     </section>
-    <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    
     <dialog id="video-details" class="modal">
         <div class="modal-box max-w-3xl" id="details-container">
         </div>

@@ -1,3 +1,14 @@
+function showLoader(){
+    document.getElementById('loader').classList.remove('hidden');
+    document.getElementById('video-container').classList.add('hidden');
+    
+}
+function hideLoader(){
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('video-container').classList.remove('hidden');
+    
+}
+
 function removeActiveClass() {
     const activeBtns = document.getElementsByClassName('active');
     for (const activeBtn of activeBtns) {
@@ -15,6 +26,8 @@ function loadCategories() {
 }
 
 function loadVideos(searchText='') {
+    showLoader()
+
     const allBtn = document.getElementById('btn-all');
     removeActiveClass();
     allBtn.classList.add('active');
@@ -24,6 +37,7 @@ function loadVideos(searchText='') {
 }
 
 const loadVideosByCategories = (id) => {
+    showLoader()
     // console.log(id)
     removeActiveClass()
 
@@ -59,6 +73,7 @@ function displayCategories(categories) {
 }
 
 const displayVideos = (videos) => {
+    
     const videoContainer = document.getElementById('video-container');
     videoContainer.innerHTML = '';
 
@@ -69,6 +84,7 @@ const displayVideos = (videos) => {
             <h2 class="text-4xl font-bold">Oops!! Sorry, There is no content here</h2>
         </div>
         `;
+        hideLoader()
         return;
     }
 
@@ -98,7 +114,9 @@ const displayVideos = (videos) => {
             <button onclick="loadVideoDetails('${video.video_id}')" class="btn mx-5">Show Details</button>
         `;
         videoContainer.appendChild(videoCard)
-    })
+        hideLoader()
+    });
+  
 }
 
 const displayVideoDetails = (video) => {
